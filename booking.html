@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking | Saurabh Wellness Center</title>
+    <meta name="description" content="Book your yoga class at Saurabh Wellness Center in Dehradun, Uttarakhand." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span>Saurabh Wellness Center</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="classes.html">Classes</a>
+          <a href="team.html">Instructors</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+          <a href="auth.html" id="nav-signin">Sign In</a>
+          <a class="nav-cta" href="booking.html">Book Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero" data-reveal>
+        <div class="container hero-copy">
+          <span class="eyebrow">Reserve your practice</span>
+          <h1>Reserve your spot for the next session.</h1>
+          <p>Pick a class, pay securely with UPI, cards, netbanking or wallets — and we'll confirm your spot instantly.</p>
+        </div>
+      </section>
+
+      <div class="section-divider"><span class="divider-line"></span><span class="divider-icon">✦</span><span class="divider-line"></span></div>
+
+      <section class="section" data-reveal>
+        <div class="container">
+          <div class="booking-toolbar card" data-reveal data-reveal-delay="0">
+            <div class="toolbar-text">
+              <span class="eyebrow">Upcoming offerings</span>
+              <h2 class="section-title">Choose a class or book a private session.</h2>
+            </div>
+            <div class="toolbar-actions">
+              <div class="filter-pills" aria-label="Filter offerings">
+                <button type="button" class="filter-pill active" data-filter="all">All</button>
+                <button type="button" class="filter-pill" data-filter="class">Classes</button>
+                <button type="button" class="filter-pill" data-filter="session">Sessions</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="class-list" class="schedule-grid"></div>
+        </div>
+      </section>
+
+      <section id="my-bookings" class="section" data-reveal style="display:none;">
+        <div class="container">
+          <div class="booking-toolbar card" data-reveal data-reveal-delay="0">
+            <div class="toolbar-text">
+              <span class="eyebrow">My bookings</span>
+              <h2 class="section-title">Your confirmed classes</h2>
+              <p style="color:var(--muted); margin-top:0.5rem;">Booked classes appear here after payment is completed.</p>
+            </div>
+          </div>
+          <div id="my-bookings-list" class="schedule-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>Saurabh Wellness Center</h3>
+            <p>Intentional movement and elevated wellness, grounded in calm.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><a href="classes.html">Classes</a><br /><a href="pricing.html">Pricing</a><br /><a href="contact.html">Contact</a></p>
+          </div>
+          <div>
+            <h3>Stay connected</h3>
+            <p><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a><br /><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a><br /><a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login required modal -->
+    <div id="login-modal" class="modal" style="display:none;">
+      <div class="modal-backdrop">
+        <div class="modal-box" style="text-align:center;">
+          <div class="payment-state-icon info">🔒</div>
+          <h2 class="section-title">Sign in to book</h2>
+          <p style="color:var(--muted);">You need an account to reserve a class. It takes less than a minute.</p>
+          <div style="display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap;">
+            <a class="btn btn-primary" id="login-goto" href="auth.html">Sign In / Register</a>
+            <button type="button" class="btn btn-secondary" id="login-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking summary modal (populated by booking.js) -->
+    <div id="booking-summary" class="modal" style="display:none;"></div>
+
+    <!-- Demo gateway checkout (populated by booking.js when DEMO_MODE=true) -->
+    <div id="demo-checkout" class="modal" style="display:none;"></div>
+
+    <!-- Payment processing spinner -->
+    <div id="payment-processing" class="modal" style="display:none;">
+      <div class="modal-backdrop">
+        <div class="modal-box" style="text-align:center;">
+          <div class="spinner"></div>
+          <h2 class="section-title">Confirming your booking…</h2>
+          <p style="color:var(--muted);">Please wait — we're verifying your payment securely.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment failure -->
+    <div id="payment-failure" class="modal" style="display:none;"></div>
+
+    <!-- Confirmation (populated by booking.js) -->
+    <div id="confirmation-view" class="modal" style="display:none;"></div>
+
+    <script src="supabase.js?v=1"></script>
+    <script src="supabase-config.js?v=3"></script>
+    <script src="booking-config.js?v=3"></script>
+    <script src="nav-auth.js?v=3"></script>
+    <script src="booking.js?v=3"></script>
+    <script src="script.js?v=3"></script>
+  </body>
+</html>
