@@ -85,7 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function signInWithGoogle() {
     try {
-      const { error } = await supabaseClient.auth.signInWithOAuth({ provider: 'google' });
+      const { error } = await supabaseClient.auth.signInWithOAuth({
+  provider: 'google',
+  options: {
+    redirectTo: 'https://shaurya0808.github.io/yogfa-clinic/auth.html'
+  }
+});
       if (error) {
         console.error('Google sign-in error:', error);
         showMessage(friendlyAuthError(error), 'error');
