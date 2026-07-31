@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructors | Saurabh Wellness Center</title>
+    <meta name="description" content="Meet our team of experienced yoga instructors at Saurabh Wellness Center in Dehradun." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span>Saurabh Wellness Center</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="classes.html">Classes</a>
+          <a href="team.html">Instructors</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+          <a href="auth.html" id="nav-signin">Sign In</a>
+          <a class="nav-cta" href="booking.html">Book Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero" data-reveal>
+        <div class="container hero-copy">
+          <span class="eyebrow">Meet the team</span>
+          <h1>Teachers who guide with warmth, care, and intention.</h1>
+          <p>Our instructors bring a blend of deep traditional practice, grounded presence, and thoughtful teaching to every session at our Dehradun studio.</p>
+        </div>
+      </section>
+
+      <div class="section-divider"><span class="divider-line"></span><span class="divider-icon">✦</span><span class="divider-line"></span></div>
+
+      <section class="section" data-reveal>
+        <div class="container section-grid cards-3">
+          <article class="card" data-reveal data-reveal-delay="0">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Instructor portrait" />
+            </div>
+            <h3>Saurabh Negi</h3>
+            <p>Saurabh is a founder and lead Vinyasa teacher who blends breath, alignment, and intelligent flow into each class.
+            </p>
+          </article>
+          <article class="card" data-reveal data-reveal-delay="100">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80" alt="Instructor portrait" />
+            </div>
+            <h3>Mohan Lal</h3>
+            <p>Mohan specializes in restorative movement and Yin practice, encouraging calm release and deep nervous-system renewal.
+            </p>
+          </article>
+          <article class="card" data-reveal data-reveal-delay="200">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Instructor portrait" />
+            </div>
+            <h3>Ashish Rayal</h3>
+            <p>Ashish leads empowered, strong classes with a focus on heat, core strength, and grounded alignment.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>Saurabh Wellness Center</h3>
+            <p>Intentional movement and elevated wellness, grounded in calm.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><a href="classes.html">Classes</a><br /><a href="pricing.html">Pricing</a><br /><a href="contact.html">Contact</a></p>
+          </div>
+          <div>
+            <h3>Stay connected</h3>
+            <p><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a><br /><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a><br /><a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="nav-auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | Saurabh Wellness Center</title>
+    <meta name="description" content="View our pricing and membership plans at Saurabh Wellness Center in Dehradun." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">S</span>
+          <span>Saurabh Wellness Center</span>
+        </a>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="classes.html">Classes</a>
+          <a href="team.html">Instructors</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+          <a href="auth.html" id="nav-signin">Sign In</a>
+          <a class="nav-cta" href="booking.html">Book Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero" data-reveal>
+        <div class="container hero-copy">
+          <span class="eyebrow">Memberships & packages</span>
+          <h1>Choose the rhythm that fits your practice.</h1>
+          <p>Flexible pricing for first-time visitors, regular practitioners, and anyone looking for a deeper wellness practice in Dehradun.</p>
+        </div>
+      </section>
+
+      <div class="section-divider"><span class="divider-line"></span><span class="divider-icon">✦</span><span class="divider-line"></span></div>
+
+      <section class="section" data-reveal>
+        <div class="container section-grid cards-3">
+          <article class="pricing-card" data-reveal data-reveal-delay="0">
+            <span class="badge">Drop-In</span>
+            <div class="price">$24</div>
+            <p>Perfect for a single visit or trying a new class.</p>
+            <ul>
+              <li>Access to any open class</li>
+              <li>Tea and mat rental included</li>
+            </ul>
+            <a class="btn btn-primary" href="booking.html">Reserve now</a>
+          </article>
+          <article class="pricing-card" data-reveal data-reveal-delay="100">
+            <span class="badge">Monthly Flow</span>
+            <div class="price">$129</div>
+            <p>For regular practitioners looking for a steady rhythm.</p>
+            <ul>
+              <li>4 classes per month</li>
+              <li>Member pricing on workshops</li>
+              <li>10% off retail</li>
+            </ul>
+            <a class="btn btn-primary" href="booking.html">Join today</a>
+          </article>
+          <article class="pricing-card" data-reveal data-reveal-delay="200">
+            <span class="badge">Unlimited</span>
+            <div class="price">$199</div>
+            <p>For those who come often and want full studio access.</p>
+            <ul>
+              <li>Unlimited classes monthly</li>
+              <li>Priority workshop access</li>
+              <li>Complimentary tea bar entry</li>
+            </ul>
+            <a class="btn btn-primary" href="booking.html">Become a member</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>Saurabh Wellness Center</h3>
+            <p>Intentional movement and elevated wellness, grounded in calm.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><a href="classes.html">Classes</a><br /><a href="team.html">Instructors</a><br /><a href="contact.html">Contact</a></p>
+          </div>
+          <div>
+            <h3>Stay connected</h3>
+            <p><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a><br /><a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a><br /><a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="nav-auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
